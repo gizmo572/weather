@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,20 @@
     <header>
         <img src="#" alt="LOGO">
         <span>WEATHER APP</span>
-        <form action="">
+        <form id="search-form" action="">
             <label for="searchBar">Enter Your City: </label>
-            <input type="text" name="searchBar">
+            <input id="city-input" type="text" name="searchBar">
             <input type="submit" value="SEARCH">
         </form>
     </header>
     <section>
-
+        <h1 id="city"></h1>
+        <h2 id="temperature"></h2>
+        <p id="weather-description"></p>
+        <span id="windSpeed"></span>
+        <br>
+        <span id="wind-direction"></span>
     </section>
+    
 </body>
 </html>

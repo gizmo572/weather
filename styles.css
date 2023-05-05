@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -12,4 +18,13 @@ header > span {
     font-size: 40px;
     font-weight: bolder;
     color:aqua;
+}
+
+body > section {
+    margin-top: 10rem;
+}
+
+body > section > *{
+    /* text-align: center; */
+    margin: 2rem 20rem;
 }
