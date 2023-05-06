@@ -23,16 +23,30 @@ function getWeatherData(city) {
       }
       const windDirection = direction();
 
-      console.log(typeof windDirection, windDirection)
       const city = data.name;
 
+      const selectImg = (folderType) => {
+        const gifs = Array.from(document.querySelectorAll('img[src^="./' + folderType + '"]')).map(gif => gif.src.replace(window.location.href, ''));
+        console.log('gifs', gifs)
+        return gifs[Math.floor(Math.random() * gifs.length)];
+      }
+
+      let folderType;
+      const test1 = selectImg('rainy')
+      console.log("test1", test1)
+    
       // update the background theme based on the weather description
-      if (weatherDescription.includes('clouds')) {
-        document.body.style.backgroundImage = 'url(./ezgif.com-crop.gif)';
+      if (weatherDescription.includes('overcast')) {
+        document.body.style.backgroundImage = 'url(./cloudy/cloudy-day.gif)';
+      } else if (weatherDescription.includes('clouds')) {
+        document.body.style.backgroundImage = 'url(./partly-cloudy/partly-cloudy-cat.gif)';
+      } else if (weatherDescription.includes('light')) {
+        document.body.style.backgroundImage = 'url(./light-rain.gif)';
       } else if (weatherDescription.includes('rain')) {
-        document.body.style.backgroundImage = 'url(./ezgif.com-crop.gif)';
+        folderType = "rainy";
+        document.body.style.backgroundImage = `url(./rainy/rain-cat2.gif)`;
       } else {
-        document.body.style.backgroundImage = 'url(./ezgif.com-crop.gif)';
+        document.body.style.backgroundImage = 'url(./sunny/sunny-cat.gif)';
       }
 
       // update the frontend with the weather data

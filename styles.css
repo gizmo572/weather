@@ -20,11 +20,14 @@ header > span {
     color:aqua;
 }
 
-body > section {
-    margin-top: 10rem;
+#container {
+    background-color: rgb(49, 235, 59);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 20vw;
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
 }
 
-body > section > *{
-    /* text-align: center; */
-    margin: 2rem 20rem;
-}
